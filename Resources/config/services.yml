@@ -1,0 +1,12 @@
+services:
+    mdespeuilles.entity.meta:
+        class: Doctrine\ORM\EntityRepository
+        factory: ["@doctrine.orm.entity_manager", getRepository]
+        arguments:
+            - Mdespeuilles\MetaBundle\Entity\Meta
+
+    mdespeuilles.event.meta:
+        class: Mdespeuilles\MetaBundle\EventListener\Meta
+        arguments: [ '@service_container', '@request_stack' ]
+        tags:
+            - { name: kernel.event_listener, event: kernel.controller, method: setMeta }

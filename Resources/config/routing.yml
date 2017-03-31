@@ -1,0 +1,11 @@
+meta_form:
+    path:     /metaForm
+    defaults: { _controller: MdespeuillesMetaBundle:Meta:meta }
+
+meta_form_add:
+    path:     /metaForm/add
+    defaults: { _controller: MdespeuillesMetaBundle:Meta:addMeta }
+
+meta_form_edit:
+    path:     /metaForm/{metaId}/edit
+    defaults: { _controller: MdespeuillesMetaBundle:Meta:editMeta }
