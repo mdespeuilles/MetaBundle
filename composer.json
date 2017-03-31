@@ -14,7 +14,7 @@
   ],
   "require" : {
     "php": ">=7.0",
-    "sonata-project/seo-bundle": "^2.0",
+    "sonata-project/seo-bundle": "^2.0"
     
   },
   "autoload" : {
