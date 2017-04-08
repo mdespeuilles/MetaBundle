@@ -1,6 +1,8 @@
 MetaBundle
 ==========
 
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/dc898db2-b127-4167-8f14-79f624636f4b/small.png)](https://insight.sensiolabs.com/projects/dc898db2-b127-4167-8f14-79f624636f4b)
+
 <img width="250" src="https://cloud.githubusercontent.com/assets/690453/24827652/14dbf26a-1c4e-11e7-8631-2b1289113b92.png" align="right" />
 
 This bundle provides an easy way to set meta tag directly from the front.
