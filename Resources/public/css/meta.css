@@ -1,0 +1,60 @@
+#meta-quick-form {
+    position: absolute;
+    top: 10%;
+    left: -300px;
+    box-sizing: border-box;
+    z-index: 999;
+}
+
+#meta-quick-form form #meta > div:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#meta-quick-form form {
+    padding: 10px;
+    background: #333;
+    width: 300px;
+}
+
+#meta-quick-form form label {
+    color: #FFF;
+    display: block;
+    margin-top: 10px;
+}
+
+#meta-quick-form form textarea {
+    min-height: 70px;
+    height: 70px;
+    display: block;
+    width: 100%;
+}
+
+#meta-quick-form form input {
+    display: block;
+    width: 100%;
+}
+
+#meta-quick-form form button {
+    display: inline-block;
+    width: 150px;
+    margin: 15px auto;
+}
+
+#meta-quick-form span.open_meta_form {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    right: -55px;
+    color: #FFF;
+    background: rgba(51, 51, 51, 0.73);
+    border-radius: 0 5px 5px 0;
+    display: block;
+    width: 55px;
+    text-align: center;
+    line-height: 35px;
+    height: 35px;
+}

@@ -26,7 +26,7 @@ class MetaType extends AbstractType
             ->add('ogImageFile', VichImageType::class, [
                 'required'      => false,
                 'allow_delete'  => true,
-                'download_link' => false, // not mandatory, default is true
+                'download_link' => false,
             ])
             ->add('ogType')
             ->add('url', HiddenType::class)
