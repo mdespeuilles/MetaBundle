@@ -9,24 +9,21 @@
 namespace Mdespeuilles\MetaBundle\EventListener;
 
 
-use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\DependencyInjection\ContainerAwareInterface;
+use Symfony\Component\DependencyInjection\ContainerAwareTrait;
 use Symfony\Component\HttpFoundation\RequestStack;
 
-class Meta
+class Meta implements ContainerAwareInterface
 {
-    /**
-     * @var ContainerInterface $containerInterface
-     */
-    private $containerInterface;
+    use ContainerAwareTrait;
 
     /**
      * @var RequestStack $requestStack
      */
     private $requestStack;
 
-    public function __construct(ContainerInterface $containerInterface, RequestStack $requestStack)
+    public function __construct(RequestStack $requestStack)
     {
-        $this->containerInterface = $containerInterface;
         $this->requestStack = $requestStack;
     }
 
@@ -37,12 +34,12 @@ class Meta
         $path = str_replace("/app_dev.php", "", $url_array["path"]);
 
         /* @var \Mdespeuilles\MetaBundle\Entity\Meta $meta */
-        $meta = $this->containerInterface->get('mdespeuilles.entity.meta')->findOneBy([
+        $meta = $this->container->get('mdespeuilles.entity.meta')->findOneBy([
             'url' => $path,
             'language' => $request->getLocale()
         ]);
 
-        $seoPage = $this->containerInterface->get('sonata.seo.page');
+        $seoPage = $this->container->get('sonata.seo.page');
 
         if ($meta) {
             $seoPage->setTitle($meta->getTitle());
@@ -50,7 +47,7 @@ class Meta
             $seoPage->addMeta('property', 'og:title', $meta->getOgTitle());
             $seoPage->addMeta('property', 'og:url',  $request->getUri());
             $seoPage->addMeta('property', 'og:description', $meta->getOgDescription());
-            $helper = $this->containerInterface->get('vich_uploader.templating.helper.uploader_helper');
+            $helper = $this->container->get('vich_uploader.templating.helper.uploader_helper');
             $path = $helper->asset($meta, 'ogImageFile');
             if ($path) {
                 $seoPage->addMeta('property', 'og:image', $url_array["scheme"]."://".$url_array["host"] . $path);
