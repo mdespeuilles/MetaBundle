@@ -3,7 +3,7 @@
 namespace Mdespeuilles\MetaBundle\Controller;
 
 use Mdespeuilles\MetaBundle\Entity\Meta;
-use Mdespeuilles\MetaBundle\Form\MetaType;
+use Mdespeuilles\MetaBundle\Form\Type\MetaType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
