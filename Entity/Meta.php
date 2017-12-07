@@ -11,7 +11,7 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
  *
  * @ORM\Table(name="meta")
  * @ORM\Entity(repositoryClass="Mdespeuilles\MetaBundle\Repository\MetaRepository")
- * @Vich\Uploadable
+ * @Vich\Uploadable()
  */
 class Meta
 {
@@ -88,6 +88,13 @@ class Meta
      * @ORM\Column(name="language", type="string", length=255, nullable=true)
      */
     private $language;
+    
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     *
+     * @var \DateTime
+     */
+    private $updatedAt;
 
 
     /**
@@ -306,6 +313,20 @@ class Meta
     public function setLanguage($language)
     {
         $this->language = $language;
+    }
+    
+    /**
+     * @return \DateTime
+     */
+    public function getUpdatedAt() {
+        return $this->updatedAt;
+    }
+    
+    /**
+     * @param \DateTime $updatedAt
+     */
+    public function setUpdatedAt($updatedAt) {
+        $this->updatedAt = $updatedAt;
     }
 }
 
