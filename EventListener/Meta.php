@@ -47,6 +47,7 @@ class Meta implements ContainerAwareInterface
             $seoPage->addMeta('property', 'og:title', $meta->getOgTitle());
             $seoPage->addMeta('property', 'og:url',  $request->getUri());
             $seoPage->addMeta('property', 'og:description', $meta->getOgDescription());
+            $seoPage->addMeta('property', 'og:type', $meta->getOgType());
             $helper = $this->container->get('vich_uploader.templating.helper.uploader_helper');
             $path = $helper->asset($meta, 'ogImageFile');
             if ($path) {
